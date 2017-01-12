@@ -29,10 +29,12 @@
       <kbd>G</kbd>
       <span class="sound">boom</span>
     </div>
+    
     <div data-key="72" class="key">
       <kbd>H</kbd>
       <span class="sound">ride</span>
     </div>
+    
     <div data-key="74" class="key">
       <kbd>J</kbd>
       <span class="sound">snare</span>
@@ -58,8 +60,21 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-    // write javascript here
+    // listening on the window for any key down event
+    // log keyCode attribute on the event to the console
+    // 
+    window.addEventListener('keydown', function(e) {
+      console.log(e.keyCode);
+
+      var sound = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      if (!sound) return;
+      sound.currentTime = 0;
+      sound.play();
+      console.log(sound);
+    });
 </script>
+
+#item-81004-3 > a > img
 
 
 </body>
